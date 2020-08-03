@@ -1,0 +1,10 @@
+compute:
+  cpu_ratio=6
+
+influx:
+  host: localhost
+  port: 8086
+  database: python
+  user: openstack_capacity
+  password: password
+  ssl: False

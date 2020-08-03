@@ -1,0 +1,10 @@
+clouds:
+  lab1:
+    region_name: RegionOne
+    auth:
+      domain_id: default
+      username: admin
+      password: admin_user_secret
+      project_name: admin
+      auth_url: http://10.0.0.11:35357/v3
+    identity_api_version: 3
