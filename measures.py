@@ -17,18 +17,4 @@ class Hypervisor:
         self.memory_size = memory_size
 
     def to_measurement(self):
-        return [{"measurement":"Computes",
-            "tags": {
-            'cloud_name': self.cloud_name,
-            'compute': self.compute,
-            'status': self.status,
-            'running_vms': self.running_vms,
-            'vcpus_used': self.vcpus_used,
-            'memory_used': self.memory_used,
-            'vcpus_size': self.vcpus_size,
-            'memory_size': self.memory_size
-            },
-                  "fields":
-            {
-                "SessionDuration":1.2
-            } }]
+        return {"measurement":"Computes","tags": {'cloud_name': self.cloud_name,'compute': self.compute,'status': self.status,'running_vms': self.running_vms,'vcpus_used': self.vcpus_used,'memory_used': self.memory_used,'vcpus_size': self.vcpus_size,'memory_size': self.memory_size},"fields":{ "SessionDuration":1.2 }}
