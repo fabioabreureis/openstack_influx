@@ -1,8 +1,7 @@
 from measures import Hypervisor
 import os
-
-os.environ['REQUESTS_CA_BUNDLE'] = '/etc/ssl/certs/rootCA.pem'
-
+import openstack.cloud
+import configparser
 class OpenstackUtil:
     def __init__(self, cloud_name):
         self.cloud_name = cloud_name
