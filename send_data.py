@@ -5,7 +5,6 @@ import re
 from pathlib import Path
 from openstack_util import OpenstackUtil
 from influx import influx_connection
-from influxdb import InfluxDBClient
 
 UNIX_CONFIG_HOME = os.path.join(os.path.expanduser(os.path.join('~', '.config')), 'openstack_influx')
 UNIX_SITE_CONFIG_HOME = '/etc/openstack_influx'
@@ -34,8 +33,8 @@ def get_config():
                 return path, yaml.safe_load(f)
     raise Exception("Not load the config file, verify if files exists in %s." % CONFIG_FILES)
 
-dbclient = InfluxDBClient('localhost',8086,'root','root','python')
+
 json_data=OpenstackUtil('lab1').get_hypervisors()
 
-dbclient.write_points(json_data)
+influx_connection().write_points(json_data)
 

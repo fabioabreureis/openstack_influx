@@ -19,4 +19,3 @@ def influx_connection():
         raise CantConnectToInfluxDBException('connection error')
     return influxconn
 
-
